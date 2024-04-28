@@ -6,9 +6,22 @@
 //
 
 #include <iostream>
+#include "TextQuery.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+void runQuery(ifstream& infile){
+    TextQuery qt(infile);
+    cout << "enter a word to search, or q to quit: " << endl;
+    string word;
+    while(cin >> word){
+        if (word.empty() || word == "q") break;
+        print(cout, qt.query(word));
+    }
+}
+
+int main() {
+    ifstream infile("/Users/panqj/Desktop/job/2024/LamResearch/TextQuery_lrcx4/storyDataFile");
+    runQuery(infile);
     return 0;
 }

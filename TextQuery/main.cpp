@@ -21,7 +21,7 @@ void runQuery(ifstream& infile){
 }
 
 int main() {
-    ifstream infile("/Users/panqj/Desktop/job/2024/LamResearch/TextQuery_lrcx4/storyDataFile");
+    ifstream infile("./storyDataFile");
     runQuery(infile);
     return 0;
 }
